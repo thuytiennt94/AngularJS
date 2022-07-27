@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="costApp" ng-controller="CostController">
+        <h3>Số năm làm việc: </h3>
+        <input type="number" name="" id="slry" ng-model="slry">
+        <h3>Nhập vào số lương hàng tháng :</h3>
+        <input type="number" name="" id="slry"  ng-click="slry">
+        <br><br>
+        <input type="button" value="Calculate" ng-click="Calc()">
+        <h4>Tổng số tiền thưởng: {{bonus | currency: 'VND : '}}</h4>
+        <h4>số tiền thuế: {{tax | currency : 'VND: '}}</h4>
+        <h4>số tiền được nhận : {{total | currency: 'VND'}}</h4>
+    </div>
+    <script>
+        var app = angular.module('costApp', []);
+        app.controller('CostController', function($scope){
+            $scope.exp = 0;
+            $scope.slry = 0;
+            $scope.tax = 0;
+            $scope.month = 0;
+            $scope.total = 0;
+            $scope.bonus = 0;
+            $scope.Calc = function(){
+                if($scope.exp < 5){
+                    $scope.month = 3;
+                }else if ($scope.exp >= 5 && $scope.exp <= 10) {
+                    $scope.month = 6;
+                }else{
+                    $scope.month = 12;
+                }
+                $scope.bonus = $scope.slry * $scope.month;
+                $scope.tax = $scope.bonus * 0.1;
+                $scope.total = $scope.bonus - $scope.tax;
+            };
+        })
+    </script>
+</body>
+</html>

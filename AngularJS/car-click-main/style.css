@@ -1,0 +1,15 @@
+html{
+    width: auto;
+}
+.col-mg-4 .order-md-1 h4{
+    font-weight: bold;
+    font-size: 24px;
+}
+#car #car-name {
+    font-weight: bold;
+
+}
+#car img {
+    width: 100%;
+    margin: auto;
+}
