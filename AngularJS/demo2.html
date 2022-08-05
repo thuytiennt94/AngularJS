@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-2 AngularJS App with module and controllers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myController">
+        First Name: <input type="text" name="" ng-model="firstName" >
+        <br>
+        Last Name: <input type="text" name="" ng-model="lastName" >
+        <br>
+        Full Name: {{firstName + "  "+lastName}}
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myController', function($scope){
+            $scope.firstName = "Sunder";
+            $scope.lastName = "Pichai";
+        });
+    </script>
+</body>
+</html>

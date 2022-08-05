@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-2 AngularJS App with module and controllers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="namesCtrl">
+        <h3>List of Brics countries and thier capitals.</h3>
+        <ol>
+            <li ng-repeat="x in names">
+                {{x.country + ', ' + x.capital}}
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        angular.module('myApp', []).controller('namesCtrl', function($scope) {
+            $scope.names = [
+                {country: 'Brazil', capital: 'Brasilia'},
+                {country: 'Russia', capital: 'Moscow'},
+                {country: 'India', capital: 'New Delhi'},
+                {country: 'China', capital: 'Beijing'},
+                {country: 'Malay', capital: 'protorla'},
+            ]
+        })
+    </script>
+</body>
+</html>

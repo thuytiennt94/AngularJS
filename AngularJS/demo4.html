@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo-4 Nested Scopes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+      <p>The rootscope's favaorite color: </p>
+      <h1>{{color}}</h1>
+
+      <div ng-controller="myCtrl">
+          <p>The scope of the controller's favoerite color: </p>
+          <h1>{{color}}</h1>
+      </div>
+
+      <script>
+        var app = angular.module('myApp', []);
+        app.run(function ($rootElement){
+          $rootElement.color = 'blue';
+        });
+        app.controller('myCtrl', function ($scope){
+          $scope.color = 'red';
+        });
+      </script>
+      <p>Notice that controller's color variable does not overwrite the rootScope's coloe value</p>
+</body>
+</html>

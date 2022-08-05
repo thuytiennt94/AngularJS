@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo5 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <style>
+          div {
+            transition: all linear 1s;
+            background-color: cyan;
+            height: 100px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: relative;
+          }
+          .ng-hide {
+            height: 0;
+            width: 0;
+            background-color: transparent;
+            top: 200px;
+            left: 200px;
+          }
+    </style>
+</head>
+<body ng-app="ngAnimate">
+      <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck" name="" id=""></h1>
+      <div ng-hide="myCheck"></div>
+</body>
+</html>
