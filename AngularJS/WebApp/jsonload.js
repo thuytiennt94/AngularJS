@@ -13,8 +13,8 @@ myApp.controller('jsonCtrl', function ($scope, $http){
         return $scope.employees.length;
     }
 
-    $scope.reversedMessage = function() {
-        return $scope.empName.split(" ").reverse().join("");
+    $scope.reversedMessage = function () {
+        return $scope.myName.split("").reverse().join("");
     }
 });
 

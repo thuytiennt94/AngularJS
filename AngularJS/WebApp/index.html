@@ -48,12 +48,12 @@
     </div>
     <div ng-controller="testCtrl">
         <input type="text" name="" ng-model="myName" class="form-control" placeholder="Enter Employee Name to Add">
-        <button type="submit" ng-click="addName()" class="btn">Add</button>
+        <button ng-click="addName()" class="btn">Add</button>
         <br><br>
         Enter employee name to search:
         <input type="text" class="form-controller" ng-model="search">
         <ul>
-            <li ng-repeat="name in names | filter:search" ng-pluralize="Enter Employee Name to Search">
+            <li ng-repeat="name in names | filter:search" placeholder="Enter Employee Name to Search">
                 {{ name.name }}
             </li>
         </ul>
